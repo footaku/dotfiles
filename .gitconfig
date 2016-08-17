@@ -20,9 +20,8 @@
 	mt = mergetool
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	unstage = reset HEAD
-	unsetup = branch --unset-upstream
-	setupto   = branch --set-upstream-to
-	morning = "!f () { git fetch -p; git st; };f"
+	attach = branch --unset-upstream
+	detach = branch --set-upstream-to
 [user]
 	email = gmail.com
 	name = panage
