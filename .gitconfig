@@ -1,0 +1,34 @@
+[core]
+	autocrlf = false
+	preloadindex = true
+	fscache = true
+	editor = atom -n --wait
+[color]
+	ui = true
+[alias]
+	st  = "!f () { ./gitstatus.bash; };f"
+	b   = branch -vv
+	bd  = branch -d
+	bdf = branch -D
+	ch  = checkout
+	cb  = checkout -b
+	cm  = commit --allow-empty
+	cp  = cherry-pick --allow-empty
+	lo  = log --date=iso --pretty=format:'%Cred%ad%Creset %C(yellow)[%h]%Creset - %s' --abbrev-commit
+	dn  = diff --name-status
+	mnoff = merge --no-ff --no-edit
+	mt = mergetool
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	unstage = reset HEAD
+	unsetup = branch --unset-upstream
+	setupto   = branch --set-upstream-to
+	morning = "!f () { git fetch -p; git st; };f"
+[user]
+	email = gmail.com
+	name = panage
+[credential]
+	helper = cache --timeout=86400
+[diff]
+	tool = meld
+[merge]
+	tool = meld
