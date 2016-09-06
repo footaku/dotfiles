@@ -20,13 +20,13 @@
 	mt = mergetool
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	unstage = reset HEAD
-	attach = branch --unset-upstream
-	detach = branch --set-upstream-to
+	detach = branch --unset-upstream
+	attach = branch --set-upstream-to
 [user]
 	email = gmail.com
 	name = panage
 [credential]
-	helper = cache --timeout=86400
+	helper = osxkeychain
 [diff]
 	tool = meld
 [merge]

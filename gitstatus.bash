@@ -1,16 +1,15 @@
 #!/bin/bash
 
 f() {
-  echo -e '\n\e[1;36m### status ################# \e[m'; \
+  printf '\n\033[1;36m### status ################# \033[m\n'; \
   git status; \
-  echo -e '\n\e[1;36m### branch ################# \e[m'; \
+  printf '\n\033[1;36m### branch ################# \033[m\n'; \
   git branch -vv; \
-  echo -e '\n\e[1;36m### stash ################# \e[m'; \
+  printf '\n\033[1;36m### stash ################# \033[m\n'; \
   git stash list; \
-  echo -e '\n\e[1;36m### log ################# \e[m'; \
+  printf '\n\033[1;36m### log ################# \033[m\n'; \
   git lo -10; \
-  echo -e '\n' | cat
+  printf '\n' | cat
 }
 f
 exit 0
-
