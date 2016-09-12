@@ -1,0 +1,36 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+
+  tasks:
+    - name: Install homebrew packages
+      homebrew: name={{ item }}
+      with_items:
+        - git
+        - jq
+        - openssl
+        - ansible
+        - colordiff
+        - wget
+        - curl
+        - nkf
+        - bash-completion
+    - name: Add homebrew tap repositories
+      homebrew_tap: tap={{ item }} state=present
+      with_items:
+        - caskroom/cask
+    - name: Install Homebrew cask packages
+      homebrew_cask: name={{ item }}
+      with_items:
+        - iterm2
+        - google-chrome
+        - google-japanese-ime
+        - alfred
+        - slack
+        - atom
+        - intellij-idea
+        - virtualbox
+        - clipy
+        - sequel-pro
+        - chatwork
