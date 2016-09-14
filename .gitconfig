@@ -6,7 +6,7 @@
 [color]
 	ui = true
 [alias]
-	st  = "!f () { ./gitstatus.bash; };f"
+	st  = "!f () { ~/gitstatus.bash; };f"
 	b   = branch -vv
 	bd  = branch -d
 	bdf = branch -D
