@@ -1,38 +1,57 @@
 - hosts: localhost
   connection: local
   gather_facts: no
-  sudo: no
+  become: no
+
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+    homebrews:
+      - { name: git }
+      - { name: jq }
+      - { name: openssl }
+      - { name: openssl, state: linked, install_options: force }
+      - { name: ansible }
+      - { name: colordiff }
+      - { name: wget }
+      - { name: curl }
+      - { name: nkf }
+      - { name: bash-completion }
+      - { name: wireshark, install_options: with-qt5 }
+    homebrew_casks:
+      - { name: iterm2 }
+      - { name: google-chrome }
+      - { name: google-japanese-ime }
+      - { name: alfred }
+      - { name: slack }
+      - { name: atom }
+      - { name: intellij-idea }
+      - { name: virtualbox }
+      - { name: clipy }
+      - { name: sequel-pro }
+      - { name: chatwork }
+      - { name: 1password }
+      - { name: dropbox }
 
   tasks:
-    - name: Install homebrew packages
-      homebrew: name={{ item }}
-      with_items:
-        - git
-        - jq
-        - openssl
-        - ansible
-        - colordiff
-        - wget
-        - curl
-        - nkf
-        - bash-completion
-    - name: Add homebrew tap repositories
+    - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
-      with_items:
-        - caskroom/cask
-    - name: Install Homebrew cask packages
-      homebrew_cask: name={{ item }}
-      with_items:
-        - iterm2
-        - google-chrome
-        - google-japanese-ime
-        - alfred
-        - slack
-        - atom
-        - intellij-idea
-        - virtualbox
-        - clipy
-        - sequel-pro
-        - chatwork
-        - 1password
-        - dropbox
+      with_items: "{{ homebrew_taps }}"
+
+    - name: homebrew をアップデート
+      homebrew: update_homebrew=yes
+
+    - name: brew パッケージをインストール
+      homebrew: >
+        name={{ item.name }}
+        state={{ item.state | default('latest') }}
+        install_options={{
+          item.install_options | default() | join(',')
+          if item.install_options is not string
+          else item.install_options
+        }}
+      with_items: "{{ homebrews }}"
+
+    - name: brew cask パッケージをインストール
+      homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
+      with_items: "{{ homebrew_casks }}"
