@@ -42,6 +42,7 @@ cat << EOS > local-assemble.yml
       - { name: nkf }
       - { name: bash-completion }
       - { name: wireshark, install_options: with-qt5 }
+      - { name: hadolint }
     homebrew_casks:
       - { name: iterm2 }
       - { name: google-chrome }
