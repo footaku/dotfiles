@@ -9,6 +9,11 @@
 .oracle_jre_usage
 .subversion
 .wget-hsts
+mbox
+git
+.embedmysql/
+.mysql_history
+ansible/local-assemble.retry
 Applications/
 Desktop/
 Documents/

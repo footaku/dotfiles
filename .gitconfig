@@ -7,6 +7,7 @@
 	ui = true
 [alias]
 	st  = "!f () { ~/gitstatus.bash; };f"
+  fp  = fetch -p
 	b   = branch -vv
 	bd  = branch -d
 	bdf = branch -D
@@ -16,18 +17,21 @@
 	cp  = cherry-pick --allow-empty
 	lo  = log --date=iso --pretty=format:'%Cred%ad%Creset %C(yellow)[%h]%Creset - %s' --abbrev-commit
 	dn  = diff --name-status
-	mnoff = merge --no-ff --no-edit
-	mt = mergetool
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ds  = diff --staged
+	mn  = merge --no-ff --no-edit
+	mt  = mergetool
+	lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	unstage = reset HEAD
 	detach = branch --unset-upstream
 	attach = branch --set-upstream-to
+	chst  = "!f () { ~/git-checkout-stash.bash $1 $2; };f"
 [user]
 	email = gmail.com
 	name = panage
 [credential]
 	helper = osxkeychain
 [diff]
+  compactionHeuristic = true
 	tool = meld
 [merge]
 	tool = meld

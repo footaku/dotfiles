@@ -43,7 +43,10 @@ cat << EOS > local-assemble.yml
       - { name: bash-completion }
       - { name: wireshark, install_options: with-qt5 }
       - { name: hadolint }
+      - { name: mysql, install_options: client-only}
+      - { name: pygtk }
     homebrew_casks:
+      - { name: java }
       - { name: iterm2 }
       - { name: google-chrome }
       - { name: google-japanese-ime }
@@ -51,12 +54,17 @@ cat << EOS > local-assemble.yml
       - { name: slack }
       - { name: atom }
       - { name: intellij-idea }
+      - { name: datagrip }
       - { name: virtualbox }
       - { name: clipy }
-      - { name: sequel-pro }
       - { name: chatwork }
       - { name: 1password }
       - { name: dropbox }
+      - { name: caffeine }
+      - { name: keyboardcleantool }
+      - { name: hyperswitch }
+      - { name: skitch }
+      - { name: meld }
 
   tasks:
     - name: homebrew の tap リポジトリを追加
@@ -64,7 +72,7 @@ cat << EOS > local-assemble.yml
       with_items: "{{ homebrew_taps }}"
 
     - name: homebrew をアップデート
-      homebrew: update_homebrew=yes
+      homebrew: update_homebrew=yes upgrade_all=yes
 
     - name: brew パッケージをインストール
       homebrew: >
@@ -90,6 +98,8 @@ brew link openssl --force
 echo "export PATH=/usr/local/opt/openssl/bin:$PATH" >> ~/.bash_profile
 echo "export LD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$LD_LIBRARY_PATH" >> ~/.bash_profile
 echo "export CPATH=/usr/local/opt/openssl/include:$LD_LIBRARY_PATH" >> ~/.bash_profile
+echo "export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH" >> ~/.bash_profile
+echo "export PS1='\[\e[1;32m\]\h:\W \u\$\[\e[00m\] '" >> ~/.bash_profile
 source ~/.bash_profile
 
 exit 0
