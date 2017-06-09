@@ -8,7 +8,7 @@
 	ui = true
 [alias]
 	st  = "!f () { ~/gitstatus.bash; };f"
-  fp  = fetch -p
+	fp  = fetch -p
 	b   = branch -vv
 	bd  = branch -d
 	bdf = branch -D
@@ -32,11 +32,11 @@
 [credential]
 	helper = osxkeychain
 [diff]
-  compactionHeuristic = true
+	compactionHeuristic = true
 	tool = meld
 [merge]
 	tool = meld
 [difftool "meld"]
-  cmd = meld $LOCAL $REMOTE
+	cmd = meld $LOCAL $REMOTE
 [mergetool "meld"]
-  cmd = meld $LOCAL $MERGED $REMOTE --auto-merge
+	cmd = meld $LOCAL $MERGED $REMOTE --auto-merge
