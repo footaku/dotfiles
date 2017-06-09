@@ -3,6 +3,7 @@
 	preloadindex = true
 	fscache = true
 	editor = atom -n --wait
+	excludesfile = /Users/panage/.gitignore_global
 [color]
 	ui = true
 [alias]

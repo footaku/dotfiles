@@ -21,7 +21,10 @@
       - { name: wireshark, install_options: with-qt5 }
       - { name: mysql, install_options: client-only}
       - { name: pygtk }
+      - { name: rbenv }
+      - { name: ruby-build }
       - { name: tree }
+      
     homebrew_casks:
       - { name: java }
       - { name: iterm2 }
@@ -37,11 +40,13 @@
       - { name: chatwork }
       - { name: 1password }
       - { name: dropbox }
-      - { name: caffeine }
       - { name: keyboardcleantool }
       - { name: hyperswitch }
       - { name: skitch }
       - { name: meld }
+      - { name: insomniax }
+      - { name: bartender }
+      - { name: rubymine}
 
   tasks:
     - name: homebrew の tap リポジトリを追加
