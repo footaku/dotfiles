@@ -6,6 +6,7 @@
   vars:
     homebrew_taps:
       - caskroom/cask
+      - caskroom/versions
     homebrews:
       - { name: git }
       - { name: jq }
@@ -18,9 +19,9 @@
       - { name: nkf }
       - { name: bash-completion }
       - { name: wireshark, install_options: with-qt5 }
-      - { name: hadolint }
       - { name: mysql, install_options: client-only}
       - { name: pygtk }
+      - { name: tree }
     homebrew_casks:
       - { name: java }
       - { name: iterm2 }

@@ -13,7 +13,6 @@ alias dkc='docker ps -a -q | xargs -n 1 docker rm'
 alias dkci='docker images | grep -E "^<none>" | awk '\''{ print $3 }'\'' | xargs -n 1 docker rmi'
 alias dkrm='docker rm'
 alias dkstop='docker stop'
-alias dklint='hadolint'
 alias jxa="osascript -l JavaScript"
 
 export PATH=/usr/local/opt/openssl/bin:$PATH
