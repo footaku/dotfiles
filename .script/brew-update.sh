@@ -8,8 +8,6 @@ printf '\n\033[1;36m### update \033[m\n' && \
   brew prune && \
   printf '\n\033[1;36m### cleanup \033[m\n' && \
   brew cleanup && \
-  printf '\n\033[1;36m### cask cleanup \033[m\n' && \
-  brew cask cleanup && \
   printf '\n\033[1;36m### doctor \033[m\n' && \
   brew doctor
 

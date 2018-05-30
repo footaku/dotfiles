@@ -8,6 +8,7 @@
       - caskroom/cask
       - caskroom/versions
     homebrews:
+      - { name: fish }
       - { name: git }
       - { name: jq }
       - { name: openssl }
@@ -18,12 +19,14 @@
       - { name: curl }
       - { name: nkf }
       - { name: bash-completion }
-      - { name: wireshark, install_options: with-qt5 }
       - { name: mysql, install_options: client-only}
       - { name: pygtk }
       - { name: rbenv }
       - { name: ruby-build }
       - { name: tree }
+      - { name: pyenv }
+      - { name: direnv }
+      - { name: tfenv }
       
     homebrew_casks:
       - { name: java }

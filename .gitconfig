@@ -2,8 +2,8 @@
 	autocrlf = false
 	preloadindex = true
 	fscache = true
-	editor = atom -n --wait
-	excludesfile = /Users/panage/.gitignore_global
+	editor = code --wait
+	excludesfile = /Users/fu-taku/.gitignore_global
 [color]
 	ui = true
 [alias]
@@ -31,12 +31,12 @@
 	name = panage
 [credential]
 	helper = osxkeychain
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
 [diff]
 	compactionHeuristic = true
-	tool = meld
-[merge]
-	tool = meld
-[difftool "meld"]
-	cmd = meld $LOCAL $REMOTE
-[mergetool "meld"]
-	cmd = meld $LOCAL $MERGED $REMOTE --auto-merge
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
