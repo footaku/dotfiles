@@ -1,0 +1,40 @@
+#!/bin/bash
+
+## symbolic link files
+mkdir -p ${HOME}/.config
+curl -L https://github.com/panage/dotfiles/archive/master.tar.gz | tar zxv
+mv -f ${HOME}/dotfiles-master ${HOME}/dotfiles
+
+ln -fnsv ${HOME}/dotfiles/git ${HOME}/.config/git
+ln -fnsv ${HOME}/dotfiles/scripts ${HOME}/.config/scripts
+
+echo "" >> ${HOME}/.bash_profile
+echo "source ${HOME}/.config/scripts/aliases" >> ${HOME}/.bash_profile
+echo "" >> ${HOME}/.bash_profile
+echo "source ${HOME}/.config/scripts/functions" >> ${HOME}/.bash_profile
+
+## execute initial script sequential
+if [ "$(uname)" == 'Darwin' ]; then
+  OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
+source ${HOME}/dotfiles/initial/install-rbenv
+source ${HOME}/dotfiles/initial/install-sdkman
+source ${HOME}/dotfiles/initial/install-pyenv
+
+if [ "${OS}" = "Mac" ]; then
+  source ${HOME}/dotfiles/initial/install-brew
+  source ${HOME}/dotfiles/initial/install-gvm
+  source ${HOME}/dotfiles/initial/install-mac
+  ln -fnsv ${HOME}/dotfiles/Brewfile ${HOME}/.config/Brewfile
+  cd ${HOME}/.config && brew bundle
+  cd ${HOME}
+fi
+
+exit 0
+

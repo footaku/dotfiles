@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if !(type rbenv > /dev/null 2>&1); then
+  git clone https://github.com/rbenv/rbenv.git ~/.config/rbenv
+  cd ~/.config/rbenv && src/configure && make -C src
+  echo 'export RBENV_ROOT="$HOME/.config/rbenv"' >> ~/.bash_profile
+  echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+  ${HOME}/.config/rbenv/bin/rbenv init
+fi

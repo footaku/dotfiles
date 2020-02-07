@@ -1,0 +1,12 @@
+#!/bin/bash
+
+## turn off start up volume
+sudo nvram SystemAudioVolume=%80
+
+## remove all dock icons
+defaults write com.apple.dock persistent-apps -array
+killall Dock
+
+## key repeat
+defaults write -g InitialKeyRepeat -int 12
+defaults write -g KeyRepeat -int 1

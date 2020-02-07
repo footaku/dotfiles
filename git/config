@@ -1,0 +1,47 @@
+[core]
+	autocrlf = false
+	preloadindex = true
+	fscache = true
+	editor = code --wait
+	ignorecase = false
+	quotepath = false
+[color]
+	ui = true
+[alias]
+	st  = "!f () { ~/.config/scripts/git-status.bash; };f"
+	fp  = fetch -p
+	b   = branch -vv
+	bd  = branch -d
+	bdf = branch -D
+	ch  = checkout
+	cb  = checkout -b
+	cm  = commit --allow-empty
+	cp  = cherry-pick --allow-empty
+	lo  = log --date=iso --pretty=format:'%Cred%ad%Creset %C(yellow)[%h]%Creset - %s' --abbrev-commit
+	dn  = diff --name-status
+	ds  = diff --staged
+	mn  = merge --no-ff --no-edit
+	mt  = mergetool
+	sw  = switch
+	unstage = reset HEAD
+	detach = branch --unset-upstream
+	attach = branch --set-upstream-to
+[user]
+	email = 18702821+panage@users.noreply.github.com
+	name = fu-taku
+[credential]
+	helper = osxkeychain
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+	compactionHeuristic = true
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[rebase]
+	autosquash = true
+
+[http]
+	sslVerify = false

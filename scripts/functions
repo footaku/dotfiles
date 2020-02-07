@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# ffh - ssh from .ssh/config
+ffh() {
+  local host=$(cat ~/.ssh/config | grep "Host " | grep -Ev "[#\*]" | sort | awk '{print $2}' | fzf)
+  if [[ -z ${host} ]]; then
+    return
+  fi
+  ssh ${host}
+}

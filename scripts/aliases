@@ -1,0 +1,6 @@
+alias ll='ls -laG'
+alias dk='docker'
+alias gti="git"
+alias gitst="git st"
+alias amesh='docker run -e TERM_PROGRAM --rm otiai10/amesh'
+
