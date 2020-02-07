@@ -1,0 +1,9 @@
+Host *
+  Compression yes
+  Port 22
+  ForwardAgent yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
+#  IdentityFile ~/.ssh/filename
+#  ProxyCommand ssh host-setting-name nc %h %p
