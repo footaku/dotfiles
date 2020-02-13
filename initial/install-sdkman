@@ -2,8 +2,9 @@
 
 if !(type sdk > /dev/null 2>&1); then
   export SDKMAN_DIR="${HOME}/.config/sdkman" && curl -s "https://get.sdkman.io" | bash
-  echo 'export SDKMAN_DIR="${HOME}/.config/sdkman"' >> ~/.bash_profile
+  echo 'export SDKMAN_DIR="${HOME}/.config/sdkman"' >> ${HOME}/.bash_profile
   source "$HOME/.config/sdkman/bin/sdkman-init.sh"
   sdk version
 fi
 
+sdk install java
