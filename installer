@@ -9,6 +9,9 @@ ln -fnsv ${HOME}/dotfiles/git ${HOME}/.config/git
 ln -fnsv ${HOME}/dotfiles/scripts ${HOME}/.config/scripts
 ln -fnsv ${HOME}/dotfiles/ssh ${HOME}/.ssh
 
+chmod 700 ${HOME}/dotfiles/ssh
+chmod 600 ${HOME}/dotfiles/ssh/config
+
 echo "" >> ${HOME}/.bash_profile
 echo "source ${HOME}/.config/scripts/aliases" >> ${HOME}/.bash_profile
 echo "" >> ${HOME}/.bash_profile
