@@ -1,6 +1,8 @@
-alias ll='ls -laG'
+alias ee='exa -ahlT'
+alias ll='Please usee "exa -ahlT"'
+alias ls='Please usee "exa -ahlT"'
+alias find='Please usee "fd"'
 alias dk='docker'
 alias gti="git"
 alias gitst="git st"
 alias amesh='docker run -e TERM_PROGRAM --rm otiai10/amesh'
-
