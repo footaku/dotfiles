@@ -12,6 +12,13 @@ ln -fnsv ${HOME}/dotfiles/ssh ${HOME}/.ssh
 chmod 700 ${HOME}/dotfiles/ssh
 chmod 600 ${HOME}/dotfiles/ssh/config
 
+## git-completion
+curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash \
+  -o ${HOME}/.config/scripts/git-completion.bash
+
+## source
+echo "" >> ${HOME}/.bash_profile
+echo "source ${HOME}/.config/scripts/git-completion.bash" >> ${HOME}/.bash_profile
 echo "" >> ${HOME}/.bash_profile
 echo "source ${HOME}/.config/scripts/aliases" >> ${HOME}/.bash_profile
 echo "" >> ${HOME}/.bash_profile
