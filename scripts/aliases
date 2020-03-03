@@ -1,7 +1,6 @@
 alias ee='exa -ahlT'
-alias ll='Please usee "exa -ahlT"'
-alias ls='Please usee "exa -ahlT"'
-alias find='Please usee "fd"'
+alias ll='echo -e "Please usee exa -ahlT"'
+alias ls='echo -e "Please usee exa -ahlT"'
 alias dk='docker'
 alias gti="git"
 alias gitst="git st"
