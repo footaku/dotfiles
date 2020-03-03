@@ -1,5 +1,8 @@
 .DS_Store
 
+# installer
+git-completion.bash
+
 # Intellij IDEA
 .idea/
 *.iml

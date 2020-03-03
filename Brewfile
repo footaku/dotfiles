@@ -10,6 +10,8 @@ brew 'curl'
 brew 'nkf'
 brew 'bash-completion'
 brew 'mysql-client'
+brew 'exa'
+brew 'fd'
 
 cask 'iterm2'
 cask 'google-chrome'
