@@ -32,6 +32,7 @@ source ${HOME}/dotfiles/initial/install-sdkman
 source ${HOME}/dotfiles/initial/install-pyenv
 
 if [ "${OS}" = "Mac" ]; then
+  xcode-select --install
   source ${HOME}/dotfiles/initial/install-brew
   source ${HOME}/dotfiles/initial/install-gvm
   source ${HOME}/dotfiles/initial/install-mac
