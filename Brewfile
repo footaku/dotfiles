@@ -1,6 +1,3 @@
-update
-upgrade
-
 tap 'caskroom/cask'
 tap 'homebrew/versions'
 
