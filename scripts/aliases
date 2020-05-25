@@ -1,7 +1,9 @@
-alias ee='exa -ahlT'
-alias ll='echo -e "Please usee exa -ahlT"'
-alias ls='echo -e "Please usee exa -ahlT"'
+alias ee='exa -ahlT -L 1'
+alias ll='echo -e "Please use exa -ahlT -L 1"'
+alias ls='echo -e "Please use exa -ahlT -L 1"'
 alias dk='docker'
 alias gti="git"
 alias gitst="git st"
 alias amesh='docker run -e TERM_PROGRAM --rm otiai10/amesh'
+alias sound-mute="osascript -e 'set volume with output muted'"
+alias sound-50="osascript -e 'set volume 50/100*7'"
