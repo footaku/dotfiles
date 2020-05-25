@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if !(type goenv > /dev/null 2>&1); then
+  brew update
+  brew install goenv
+fi

@@ -5,7 +5,11 @@ git-completion.bash
 
 # Intellij IDEA
 .idea/
+.idea/saveactions_settings.xml
 *.iml
 
 # Visual Studio Code
 .history/
+
+# ssh
+known_hosts
