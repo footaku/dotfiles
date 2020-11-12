@@ -48,5 +48,9 @@ if [ "${OS}" = "Mac" ]; then
   cd ${HOME}
 fi
 
+echo "" >> ${HOME}/.bash_profile
+echo "export PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\"" >> ${HOME}/.bash_profile
+echo "export PATH=\"/usr/local/opt/grep/libexec/gnubin:$PATH\"" >> ${HOME}/.bash_profile
+
 exit 0
 
