@@ -1,5 +1,5 @@
 ## Run
 
 ```bash
-curl -L https://raw.githubusercontent.com/panage/dotfiles/master/installer | bash
+curl -L https://raw.githubusercontent.com/footaku/dotfiles/master/installer | bash
 ```

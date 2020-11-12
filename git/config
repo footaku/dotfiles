@@ -1,5 +1,5 @@
 [core]
-	autocrlf = false
+	autocrlf = input
 	preloadindex = true
 	fscache = true
 	editor = code --wait
