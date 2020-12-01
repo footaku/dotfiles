@@ -13,7 +13,7 @@ brew 'fd'
 brew 'procs'
 brew 'ripgrep'
 brew 'mas'
-brew 'sed'
+brew 'gnu-sed'
 brew 'grep'
 
 cask 'iterm2'
