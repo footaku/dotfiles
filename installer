@@ -5,6 +5,8 @@ mkdir -p ${HOME}/.config
 curl -L https://github.com/panage/dotfiles/archive/master.tar.gz | tar zxv
 mv -f ${HOME}/dotfiles-master ${HOME}/dotfiles
 
+xcode-select --install
+
 ln -fnsv ${HOME}/dotfiles/git ${HOME}/.config/git
 ln -fnsv ${HOME}/dotfiles/scripts ${HOME}/.config/scripts
 ln -fnsv ${HOME}/dotfiles/ssh ${HOME}/.ssh
@@ -34,12 +36,10 @@ else
   exit 1
 fi
 
-source ${HOME}/dotfiles/initial/install-rbenv
 source ${HOME}/dotfiles/initial/install-sdkman
 source ${HOME}/dotfiles/initial/install-pyenv
 
 if [ "${OS}" = "Mac" ]; then
-  xcode-select --install
   source ${HOME}/dotfiles/initial/install-brew
   source ${HOME}/dotfiles/initial/install-gvm
   source ${HOME}/dotfiles/initial/install-mac
