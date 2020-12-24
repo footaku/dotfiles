@@ -15,6 +15,7 @@ brew 'ripgrep'
 brew 'mas'
 brew 'gnu-sed'
 brew 'grep'
+brew 'direnv'
 
 cask 'iterm2'
 cask 'google-chrome'

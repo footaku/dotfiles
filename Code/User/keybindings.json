@@ -1,0 +1,27 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "alt+k m",
+        "command": "workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "cmd+k m",
+        "command": "-workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "shift+cmd+s",
+        "command": "workbench.action.files.saveAll"
+    },
+    {
+        "key": "cmd+s",
+        "command": "-workbench.action.files.saveAll"
+    },
+    {
+        "key": "cmd+s",
+        "command": "workbench.action.files.saveAs"
+    },
+    {
+        "key": "shift+cmd+s",
+        "command": "-workbench.action.files.saveAs"
+    }
+]

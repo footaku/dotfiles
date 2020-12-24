@@ -1,0 +1,9 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoGuessEncoding": true,
+    "editor.rename.enablePreview": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "search.useReplacePreview": false,
+    "workbench.startupEditor": "newUntitledFile"
+}

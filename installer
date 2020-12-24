@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## symbolic link files
 mkdir -p ${HOME}/.config
@@ -19,38 +19,29 @@ curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-
   -o ${HOME}/.config/scripts/git-completion.bash
 
 ## source
+echo '' >> ${HOME}/.bash_profile
+echo 'source ${HOME}/.config/scripts/git-completion.bash' >> ${HOME}/.bash_profile
 echo "" >> ${HOME}/.bash_profile
-echo "source ${HOME}/.config/scripts/git-completion.bash" >> ${HOME}/.bash_profile
-echo "" >> ${HOME}/.bash_profile
-echo "source ${HOME}/.config/scripts/aliases" >> ${HOME}/.bash_profile
-echo "" >> ${HOME}/.bash_profile
-echo "source ${HOME}/.config/scripts/functions" >> ${HOME}/.bash_profile
-
-## execute initial script sequential
-if [ "$(uname)" == 'Darwin' ]; then
-  OS='Mac'
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  OS='Linux'
-else
-  echo "Your platform ($(uname -a)) is not supported."
-  exit 1
-fi
+echo 'source ${HOME}/.config/scripts/aliases' >> ${HOME}/.bash_profile
+echo '' >> ${HOME}/.bash_profile
+echo 'source ${HOME}/.config/scripts/functions' >> ${HOME}/.bash_profile
 
 source ${HOME}/dotfiles/initial/install-sdkman
 source ${HOME}/dotfiles/initial/install-pyenv
 
-if [ "${OS}" = "Mac" ]; then
-  source ${HOME}/dotfiles/initial/install-brew
-  source ${HOME}/dotfiles/initial/install-gvm
-  source ${HOME}/dotfiles/initial/install-mac
-  ln -fnsv ${HOME}/dotfiles/Brewfile ${HOME}/.config/Brewfile
-  cd ${HOME}/.config && brew bundle
-  cd ${HOME}
-fi
+source ${HOME}/dotfiles/initial/install-brew
+source ${HOME}/dotfiles/initial/install-goenv
+source ${HOME}/dotfiles/initial/install-mac
+ln -fnsv ${HOME}/dotfiles/Brewfile ${HOME}/.config/Brewfile
+cd ${HOME}/.config && brew bundle
+cd ${HOME}/dotfiles
 
-echo "" >> ${HOME}/.bash_profile
-echo "export PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\"" >> ${HOME}/.bash_profile
-echo "export PATH=\"/usr/local/opt/grep/libexec/gnubin:$PATH\"" >> ${HOME}/.bash_profile
+ln -fnsv ${HOME}/dotfiles/Code/User/keybindings.json ${HOME}/Library/ApplicationSupport/Code/User/keybindings.json
+ln -fnsv ${HOME}/dotfiles/Code/User/settings.json ${HOME}/Library/ApplicationSupport/Code/User/settings.json
+
+echo '' >> ${HOME}/.bash_profile
+echo 'export PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\"' >> ${HOME}/.bash_profile
+echo 'export PATH=\"/usr/local/opt/grep/libexec/gnubin:$PATH\"' >> ${HOME}/.bash_profile
 
 exit 0
 
